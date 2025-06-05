@@ -4,4 +4,4 @@
 
 replicaCount: 2
 image: 390844784325.dkr.ecr.ap-northeast-2.amazonaws.com/ordering-service:latest
-port: 8888
+port: 8083
