@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: config-service
+  name: ordering-service
 
 spec:
   replicas: {{ .Values.replicaCount }}
@@ -13,11 +13,11 @@ spec:
   minReadySeconds: 5
   selector:
     matchLabels:
-      app: config-service
+      app: ordering-service
   template:
     metadata:
       labels:
-        app: config-service
+        app: ordering-service
 
     # 파드에 세팅되는 컨테이너 설정
     spec:
@@ -25,7 +25,7 @@ spec:
         - name: ecr-secret
 
       containers:
-        - name: config-service
+        - name: ordering-service
           image: {{ .Values.image }}
           imagePullPolicy: Always
           ports:
