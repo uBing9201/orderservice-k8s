@@ -26,7 +26,7 @@ spec:
 
       containers:
         - name: user-service
-          image: {{ .Values.images }}
+          image: {{ .Values.image }}
           imagePullPolicy: Always
           ports:
             - containerPort: {{ .Values.port }}
